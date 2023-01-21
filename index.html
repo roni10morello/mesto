@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pages/index.css">
+  <title>Место</title>
+</head>
+<body class="page">
+  <header class="header">
+    <img class="header__logo" src="./images/header_logo.svg" alt="Логотип Место">
+  </header>
+<main class="content">
+  <section class="profile">
+      <img class="profile__avatar" src="./images/profile__avatar.jpg" alt="Аватар">
+      <div class="profile__info">
+        <h1 class="profile__name">Жак-Ив Кусто</h1>
+        <button class="profile__btn-edit" type="submit"></button>
+      <p class="profile__job">Исследователь океана</p>
+      </div>
+    <button class="profile__btn-add" type="submit"></button>
+  </section>
+  <section class="popup">
+    <div class="popup__container">
+      <button class="popup__button-close" type="submit"></button>
+      <form class="form">
+        <label class="form__label">Редактировать профиль</label>
+        <input class="form__input" type="text" name="name" id="form-name" placeholder="Имя">
+        <input class="form__input" type="text" name="job" id="form-job" placeholder="Вид деятельности">
+        <button class="form__button-save" type="submit">Сохранить</button>
+      </form>
+    </div>
+  </section>
+  <section class="elements">
+    <figure class="elements__item">
+        <img class="elements__image" src="./images/baikal.jpg" alt="Байкал">
+        <figcaption class="elements__info">
+          <p class="elements__place">Байкал</p>
+          <button class="elements__btn-like"></button>
+        </figcaption>
+      </figure>
+    <figure class="elements__item">
+        <img class="elements__image" src="./images/karelia.jpg" alt="Карелия">
+        <figcaption class="elements__info">
+          <p class="elements__place">Карелия</p>
+          <button class="elements__btn-like"></button>
+        </figcaption>
+    </figure>
+    <figure class="elements__item">
+        <img class="elements__image" src="./images/alania.jpg" alt="Алания">
+        <figcaption class="elements__info">
+          <p class="elements__place">Алания</p>
+          <button class="elements__btn-like" type="submit"></button>
+        </figcaption>
+    </figure>
+    <figure class="elements__item">
+        <img class="elements__image" src="./images/sakhalin.jpg" alt="Сахалин">
+        <figcaption class="elements__info">
+          <p class="elements__place">Сахалин</p>
+          <button class="elements__btn-like" type="submit"></button>
+        </figcaption>
+    </figure>
+    <figure class="elements__item">
+        <img class="elements__image" src="./images/derbent.jpg" alt="Дербент">
+        <figcaption class="elements__info">
+          <p class="elements__place">Дербент</p>
+          <button class="elements__btn-like" type="submit"></button>
+        </figcaption>
+    </figure>
+    <figure class="elements__item">
+        <img class="elements__image" src="./images/altai.jpg" alt="Алтай">
+        <figcaption class="elements__info">
+          <p class="elements__place">Алтай</p>
+          <button class="elements__btn-like" type="submit"></button>
+        </figcaption>
+    </figure>
+  </section>
+</main>
+<footer class="footer">
+  <p class="footer__copyright">© 2020 Mesto Russia</p>
+</footer>
+<script src="./scripts/index.js"></script>
+</body>
+</html>
