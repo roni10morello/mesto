@@ -1,6 +1,6 @@
 Проектная работа №4 - Mesto
 
-https://roni10morello.github.io/russian-travel/index.html
+https://roni10morello.github.io/mesto/
 
 Проект одностраничного сайта, результатом которого является применения на практике навыков и теоритеческих знаний после прохождения курса "Базовый JavaScript и работа с браузером"
 
