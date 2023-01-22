@@ -5,9 +5,12 @@
   cursor: pointer;
   height: 19px;
   width: 22px;
+  padding: 0;
+  padding-left: 22px;
 }
 
 .elements__btn-like:hover {
   opacity: 0.5;
+  transition: opacity 0.5s ease;
 }
 

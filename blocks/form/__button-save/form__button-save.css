@@ -3,6 +3,8 @@
   min-width: 358px;
   min-height: 50px;
   background: #000000;
+  cursor: pointer;
+  border: none;
   border-radius: 2px;
   font-weight: 400;
   font-size: 18px;
@@ -15,6 +17,7 @@
 
 .form__button-save:hover {
   opacity: 0.8;
+  transition: opacity 0.5s ease;
 }
 @media screen and (max-width: 1024px) {
 .form__button-save {
@@ -26,5 +29,7 @@
  @media screen and (max-width: 530px) {
   .form__button-save {
     margin: 45px auto 0;
+    font-size: 14px;
+    line-height: 17px;
     }
    }

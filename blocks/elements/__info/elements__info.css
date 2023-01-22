@@ -4,7 +4,5 @@
   justify-content: space-between;
   align-items: center;
   margin: 25px 20px 29px 21px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
+
 }
