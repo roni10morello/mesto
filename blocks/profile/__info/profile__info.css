@@ -13,6 +13,12 @@
   }
  }
 
+ @media screen and (max-width: 668px) {
+  .profile__info {
+    max-width: 282px;
+  }
+ }
+
  @media screen and (max-width: 530px) {
   .profile__info {
     margin: 0;
