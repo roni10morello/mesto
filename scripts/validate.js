@@ -23,6 +23,17 @@ const hideInputError = (formElement, inputElement) => {
   errorElement.textContent = '';
 };
 
+const disableButton = (buttonElement) => {
+  buttonElement.classList.add(formsConfig.inactiveButtonClass);
+  buttonElement.setAttribute('disabled', 'disabled');
+};
+
+const enableButton = (buttonElement) => {
+  buttonElement.classList.remove(formsConfig.inactiveButtonClass);
+  buttonElement.removeAttribute('disabled', 'disabled');
+
+};
+
 const checkInputValidity = (formElement, inputElement) => {
   if(!inputElement.validity.valid) {
     showInputError(formElement, inputElement, inputElement.validationMessage);
@@ -49,17 +60,6 @@ const checkInputValidity = (formElement, inputElement) => {
     });
   };
 
-  const disableButton = (buttonElement) => {
-    buttonElement.classList.add(formsConfig.inactiveButtonClass);
-    buttonElement.setAttribute('disabled', 'disabled');
-  };
-
-
-  const enableButton = (buttonElement) => {
-    buttonElement.classList.remove(formsConfig.inactiveButtonClass);
-    buttonElement.removeAttribute('disabled', 'disabled');
-
-  };
 
   const toggleButtonState = (inputList, buttonElement) => {
     if (hasInvalidInput(inputList)) {
