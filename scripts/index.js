@@ -27,6 +27,11 @@ const profileJob = document.querySelector(".profile__job");
 const popupImageTitle =  document.querySelector(".popup__image-title");
 const popupImagePic = document.querySelector(".popup__pic");
 
+const selectAllPopup = document.querySelectorAll(".popup");
+const formElement = document.querySelector(".popup__container");
+
+const buttonElement =document.querySelector(".form__button-save");
+
 renderInitialCards();
 
 function renderInitialCards() {
@@ -44,6 +49,7 @@ function submitHandleFormAdd (evt) {
   const newCard = createCard({name: nameFormAdd, link: linkFormAdd });
 
   initialCardsList.prepend(newCard);
+  disableButton(buttonElement);
   evt.target.reset();
   closePopup(popupFormAddContainer);
 }
@@ -88,29 +94,59 @@ function createCard(item) {
 
 function openPopup(popup) {
   popup.classList.add("popup_opened");
+  document.addEventListener('keydown', (closeEscapePopup));
+
 };
+
+function closePopup(popup) {
+  popup.classList.remove("popup_opened");
+  document.removeEventListener('keydown', (closeEscapePopup));
+};
+
+const closeEscapePopup = (evt) => {
+  if (evt.key === 'Escape') {
+    const activePopup = document.querySelector('.popup_opened');
+    closePopup(activePopup);
+  }
+};
+
+selectAllPopup.forEach(function(popup) {
+  popup.addEventListener('click', function(event) {
+    if (event.target === popup) {
+      closePopup(popup);
+    }
+  });
+});
+
 popupFormEditBtnOpen.addEventListener("click", function() {
   openPopup(popupFormEditContainer);
   nameInputFormEdit.value = profileName.textContent;
   jobInputFormEdit.value = profileJob.textContent;
-});
-popupFormAddBtnOpen.addEventListener("click", function() {
-  openPopup(popupFormAddContainer);
+  enableButton(buttonElement);
 });
 
-function closePopup(popup) {
-  popup.classList.remove("popup_opened");
-};
+popupFormAddBtnOpen.addEventListener("click", function() {
+  disableButton(buttonElement);
+  openPopup(popupFormAddContainer);
+
+  elementFormAdd.reset();
+
+});
+
 popupFormEditBtnClose.addEventListener("click", function() {
   closePopup(popupFormEditContainer);
 });
+
 popupFormAddBtnClose.addEventListener("click", function() {
   closePopup(popupFormAddContainer);
-  elementFormAdd.reset();
+
 });
+
 popupImageBtnClose.addEventListener("click", function() {
   closePopup(popupImageContainer);
 });
 
 elementFormEdit.addEventListener('submit', submitHandleFormEdit);
 elementFormAdd.addEventListener('submit', submitHandleFormAdd);
+
+
