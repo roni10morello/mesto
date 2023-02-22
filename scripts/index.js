@@ -131,7 +131,6 @@ popupFormAddBtnOpen.addEventListener("click", function() {
   disableButton(disableAddButton, formsConfig);
   openPopup(popupFormAddContainer);
   elementFormAdd.reset();
-
 });
 
 closeButtons.forEach((button) => {

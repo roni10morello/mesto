@@ -51,12 +51,8 @@ const checkInputValidity = (formElement, inputElement, config) => {
         checkInputValidity(formElement, inputElement, config);
         toggleButtonState(inputList, buttonElement, config);
           });
-          formElement.addEventListener('reset', () => {
-            setTimeout(() => {
-              toggleButtonState(inputList, buttonElement, config), 0 });
         });
-      });
-    };
+      };
 
   const hasInvalidInput = (inputList) => {
     return inputList.some((inputList) => {
