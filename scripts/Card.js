@@ -37,7 +37,7 @@ export default class Card {
       this._deleteCard();
     });
     this._elementImgCard.addEventListener("click", () => {
-      this._openImagePopup(this._name, this._link);
+      this._openImgPopup();
     });
   }
 
@@ -47,5 +47,9 @@ export default class Card {
 
   _deleteCard() {
     this._element.remove();
+  }
+
+  _openImgPopup() {
+    this._openImagePopup(this._name, this._link);
   }
 }
