@@ -2,6 +2,9 @@ import Card from "./Card.js";
 import FormValidator from "./FormValidator.js";
 import { initialCards, formsConfig } from "./utils.js";
 
+const templateSelector = document.querySelector(".template")
+.content.querySelector(".elements__item");
+
 const initialCardsList = document.querySelector(".elements");
 const elementFormAdd = document.querySelector(".form_add");
 const nameImputFormAdd = document.querySelector(".form__input_form_add-name");
@@ -48,6 +51,7 @@ function createCardElement(item) {
   const cardElement = new Card(
     item.name,
     item.link,
+    templateSelector,
     openImagePopup
   ).generateCard();
   return cardElement;
@@ -113,7 +117,6 @@ popupFormEditBtnOpen.addEventListener("click", function () {
   nameInputFormEdit.value = profileName.textContent;
   jobInputFormEdit.value = profileJob.textContent;
   validFormEdit.resetValidation();
-
 });
 
 popupFormAddBtnOpen.addEventListener("click", function () {

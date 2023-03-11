@@ -2,31 +2,36 @@ export default class FormValidator {
   constructor(formsConfig, formSelector) {
     this.config = formsConfig;
     this._element = formSelector;
+    this._inputErrorClass = formsConfig.inputErrorClass;
+    this._errorClass = formsConfig.errorClass;
+    this._inactiveButtonClass = formsConfig.inactiveButtonClass;
+    this._submitButtonSelector = formsConfig.submitButtonSelector;
+    this._inputSelector = formsConfig.inputSelector;
   }
   _showInputError(inputElement, errorMessage) {
     const errorElement = this._element.querySelector(
       `#${inputElement.id}-error`
     );
-    inputElement.classList.add(this.config.inputErrorClass);
+    inputElement.classList.add(this._inputErrorClass);
     errorElement.textContent = errorMessage;
-    errorElement.classList.add(this.config.errorClass);
+    errorElement.classList.add(this._errorClass);
   }
   _hideInputError(inputElement) {
     const errorElement = this._element.querySelector(
       `#${inputElement.id}-error`
     );
-    inputElement.classList.remove(this.config.inputErrorClass);
-    errorElement.classList.remove(this.config.errorClass);
+    inputElement.classList.remove(this._inputErrorClass);
+    errorElement.classList.remove(this._errorClass);
     errorElement.textContent = "";
   }
 
   _disableButton() {
-    this._buttonElement.classList.add(this.config.inactiveButtonClass);
+    this._buttonElement.classList.add(this._inactiveButtonClass);
     this._buttonElement.setAttribute("disabled", "disabled");
   }
 
   _enableButton() {
-    this._buttonElement.classList.remove(this.config.inactiveButtonClass);
+    this._buttonElement.classList.remove(this._inactiveButtonClass);
     this._buttonElement.removeAttribute("disabled", "disabled");
   }
 
@@ -40,10 +45,10 @@ export default class FormValidator {
 
   _setEventListeners = () => {
     this._inputList = Array.from(
-      this._element.querySelectorAll(this.config.inputSelector)
+      this._element.querySelectorAll(this._inputSelector)
     );
     this._buttonElement = this._element.querySelector(
-      this.config.submitButtonSelector
+      this._submitButtonSelector
     );
 
     this._toggleButtonState();
