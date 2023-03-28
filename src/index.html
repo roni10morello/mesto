@@ -4,16 +4,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./pages/index.css">
   <title>Место</title>
 </head>
 <body class="page">
   <header class="header">
-    <img class="header__logo" src="./images/header_logo.svg" alt="Логотип Место">
+    <img class="header__logo" src= "<%=require('./images/header_logo.svg')%>" alt="Логотип Место">
   </header>
 <main class="content">
   <section class="profile">
-      <img class="profile__avatar" src="./images/profile__avatar.jpg" alt="Аватар">
+      <img class="profile__avatar" src= "<%=require('./images/profile__avatar.jpg')%>" alt="Аватар">
       <div class="profile__info">
         <div class="profile__title">
           <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -119,7 +118,7 @@
 </section>
 <section class="popup popup_image">
   <div class="popup__image-container">
-    <img class="popup__pic" src="./images/baikal.jpg" alt="">
+    <img class="popup__pic" src="<%=require('./images/baikal.jpg')%>" alt="">
     <h3 class="popup__image-title">Новое место</h3>
     <button class="popup__button-close popup__button-close_image" type="button"></button>
   </div>
@@ -134,7 +133,5 @@
     </div>
   </article>
 </template>
-<script src="./scripts/index.js" defer type="module"></script>
-
 </body>
 </html>
