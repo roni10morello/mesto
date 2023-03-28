@@ -19,7 +19,7 @@ import {
   nameInputFormEdit,
   jobInputFormEdit,
   popupImageContainer,
-} from "../scripts/utils/constants.js";
+} from "../utils/constants.js";
 
 const popupImageOpen = new PopupWithImage(popupImageContainer);
 popupImageOpen.setEventListeners();
