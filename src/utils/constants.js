@@ -34,13 +34,6 @@ const formsConfig = {
   errorClass: "form__error_visible",
 };
 
-const templateSelector = document
-  .querySelector(".template")
-  .content.querySelector(".elements__item");
-
-const nameImputFormAdd = document.querySelector(".form__input_form_add-name");
-const linkInputFormAdd = document.querySelector(".form__input_form_add-link");
-
 const popupFormEditBtnOpen = document.querySelector(".profile__btn-edit");
 const popupFormEditContainer = document.querySelector(".popup_form-edit");
 
@@ -55,9 +48,6 @@ const popupImageContainer = document.querySelector(".popup_image");
 export {
   initialCards,
   formsConfig,
-  templateSelector,
-  nameImputFormAdd,
-  linkInputFormAdd,
   popupFormEditBtnOpen,
   popupFormEditContainer,
   popupFormAddContainer,
@@ -87,3 +77,10 @@ export {
 // const disableAddButton = document.querySelector(".form__button-save_form-add");
 // const enableEditButton = document.querySelector(".form__button-save_form-edit");
 // const closeButtons = document.querySelectorAll(".popup__button-close");
+
+// const templateSelector = document
+//   .querySelector(".template")
+  //.content.querySelector(".elements__item");
+
+// const nameImputFormAdd = document.querySelector(".form__input_form_add-name");
+// const linkInputFormAdd = document.querySelector(".form__input_form_add-link");

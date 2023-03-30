@@ -9,9 +9,6 @@ import Section from "../scripts/Section.js";
 import {
   initialCards,
   formsConfig,
-  templateSelector,
-  nameImputFormAdd,
-  linkInputFormAdd,
   popupFormEditBtnOpen,
   popupFormEditContainer,
   popupFormAddContainer,
@@ -38,16 +35,15 @@ const cardList = new Section(
 
 cardList.renderItems();
 
+
+
 function createCardElement(item) {
-  const card = new Card(
-    {
-      name: item.name,
-      link: item.link,
-    },
-    templateSelector,
-    handleCardClick
-  );
-  const cardElement = card.generateCard();
+  const cardElement = new Card(
+    item,
+    handleCardClick,
+    ".template"
+  ).generateCard();
+
   return cardElement;
 }
 
@@ -57,34 +53,16 @@ validFormEdit.enableValidation();
 const validFormAdd = new FormValidator(formsConfig, popupFormAddContainer);
 validFormAdd.enableValidation();
 
-const submitHandleFormAdd = () => {
-
+function submitHandleFormAdd(inputValues) {
   const cardElement = createCardElement({
-    name: nameImputFormAdd.value,
-    link: linkInputFormAdd.value
+    name: inputValues["placename"],
+    link: inputValues["link"],
   });
-
   cardList.addItem(cardElement);
-};
+}
 
-// const submitHandleFormAdd = (item) => {
-//   const card = new Card(
-//     {
-//       name: item.name,
-//       link: item.link,
-//     },
-//     templateSelector,
-//     handleCardClick
-//   );
-//   const cardElement = card.generateCard();
-//   cardList.addItem(cardElement);
-//   console.log(cardElement);
-// };
-
-const popupFormAddCard = new PopupWithForm(
-  popupFormAddContainer,
-  submitHandleFormAdd
-);
+const popupFormAddCard = new PopupWithForm(popupFormAddContainer,
+  submitHandleFormAdd);
 popupFormAddCard.setEventListeners();
 
 const userInfo = new UserInfo({
@@ -106,6 +84,7 @@ popupFormEditBtnOpen.addEventListener("click", function () {
   const profileUser = userInfo.getUserInfo();
   nameInputFormEdit.value = profileUser.name;
   jobInputFormEdit.value = profileUser.job;
+
   popupFormEdit.open();
   validFormEdit.resetValidation();
 });
@@ -114,3 +93,16 @@ popupFormAddBtnOpen.addEventListener("click", function () {
   validFormAdd.resetValidation();
   popupFormAddCard.open();
 });
+
+
+// function createCardElement(item) {
+//   const card = new Card(
+//     {
+//       name: item.name,
+//       link: item.link,
+//     },
+//     templateSelector,
+//     handleCardClick
+//   );
+//   const cardElement = card.generateCard();
+//   return cardElement;

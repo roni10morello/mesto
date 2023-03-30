@@ -13,3 +13,6 @@ export default class PopupWithImage extends Popup {
     this._title.textContent = title;
   }
 }
+
+
+
