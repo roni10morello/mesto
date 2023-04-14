@@ -1,30 +1,3 @@
-const initialCards = [
-  {
-    name: "Байкал",
-    link: "https://images.unsplash.com/photo-1551845041-63e8e76836ea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=689&q=80/",
-  },
-  {
-    name: "Карелия",
-    link: "https://images.unsplash.com/photo-1573156667506-115190c68737?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
-  },
-  {
-    name: "Алания",
-    link: "https://images.unsplash.com/photo-1612719734820-81784b7e6573?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-  },
-  {
-    name: "Сахалин",
-    link: "https://images.unsplash.com/photo-1661680390126-ed81efd300b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80",
-  },
-  {
-    name: "Дербент",
-    link: "https://images.unsplash.com/photo-1625780248192-cfdc2d61a996?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-  },
-  {
-    name: "Алтай",
-    link: "https://images.unsplash.com/photo-1620315431189-2bd22e95d97c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
-  },
-];
-
 const formsConfig = {
   formSelector: ".popup__form",
   inputSelector: ".form__input",
@@ -44,9 +17,15 @@ const nameInputFormEdit = document.querySelector(".form__input_form_edit-name");
 const jobInputFormEdit = document.querySelector(".form__input_form_edit-job");
 
 const popupImageContainer = document.querySelector(".popup_image");
+const popupDeleteCardContainer = document.querySelector(".popup_form-delete");
+const popupBtnDeleteCard = document.querySelector(".elements__btn-delete");
+
+const popupFormAvatarBtnOpen = document.querySelector(
+  ".profile__btn-avatar-edit"
+);
+const popupEditAvatarContainer = document.querySelector(".popup_form-avatar");
 
 export {
-  initialCards,
   formsConfig,
   popupFormEditBtnOpen,
   popupFormEditContainer,
@@ -55,6 +34,10 @@ export {
   nameInputFormEdit,
   jobInputFormEdit,
   popupImageContainer,
+  popupDeleteCardContainer,
+  popupBtnDeleteCard,
+  popupEditAvatarContainer,
+  popupFormAvatarBtnOpen,
 };
 
 // const popupImageTitle = document.querySelector(".popup__image-title");
@@ -80,7 +63,34 @@ export {
 
 // const templateSelector = document
 //   .querySelector(".template")
-  //.content.querySelector(".elements__item");
+//.content.querySelector(".elements__item");
 
 // const nameImputFormAdd = document.querySelector(".form__input_form_add-name");
 // const linkInputFormAdd = document.querySelector(".form__input_form_add-link");
+
+// const initialCards = [
+//   {
+//     name: "Байкал",
+//     link: "https://images.unsplash.com/photo-1551845041-63e8e76836ea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=689&q=80/",
+//   },
+//   {
+//     name: "Карелия",
+//     link: "https://images.unsplash.com/photo-1573156667506-115190c68737?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80",
+//   },
+//   {
+//     name: "Алания",
+//     link: "https://images.unsplash.com/photo-1612719734820-81784b7e6573?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+//   },
+//   {
+//     name: "Сахалин",
+//     link: "https://images.unsplash.com/photo-1661680390126-ed81efd300b5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=688&q=80",
+//   },
+//   {
+//     name: "Дербент",
+//     link: "https://images.unsplash.com/photo-1625780248192-cfdc2d61a996?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
+//   },
+//   {
+//     name: "Алтай",
+//     link: "https://images.unsplash.com/photo-1620315431189-2bd22e95d97c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80",
+//   },
+// ];

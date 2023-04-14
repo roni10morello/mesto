@@ -6,14 +6,14 @@
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   margin: 0;
-  margin-top: 30px;
+
   padding: 0;
   padding-bottom: 10px;
   outline:none;
 }
 
-.form__input:nth-child(1) {
-  margin-top: 0;
+.form__input:nth-child(2) {
+  margin-bottom: 12px;
 }
 
 .form__input:focus {
