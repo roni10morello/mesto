@@ -91,10 +91,7 @@ validFormAvatarEdit.enableValidation();
 //-------------------------------------------------------------------------//
 
 const cardList = new Section(
-  {
-    items: [],
-    renderer: (item) => createCardElement(item, userId),
-  },
+  {renderer: (item) => createCardElement(item, userId)},
   ".elements"
 );
 
@@ -122,6 +119,7 @@ function handleRemoveBtnClick(card) {
       .deleteCard(card._id)
       .then(() => {
         card.removeCard();
+        popupFormDeleteCard.close();
       })
       .catch((err) =>  {
         console.log(`ALLARM ${err}`)
@@ -133,7 +131,7 @@ function handleRemoveBtnClick(card) {
 }
 
 function submitHandleFormAdd(dataInput) {
-  //popupFormAddCard.renderLoading(true);
+  popupFormAddCard.renderLoading(true);
   api
     .addCard({
       name: dataInput["placename"],
@@ -141,13 +139,14 @@ function submitHandleFormAdd(dataInput) {
     })
     .then((res) => {
       cardList.addItem(createCardElement(res));
+      popupFormAddCard.close();
     })
     .catch((err) => {
       console.log(`ALLARM ${err}`);
     })
-    // .finally(() => {
-    //   popupFormEdit.renderLoading(false);
-    // });
+    .finally(() => {
+      popupFormAddCard.renderLoading(false);
+    });
 }
 
 function submitHandleFormEdit(dataInput) {
@@ -156,6 +155,7 @@ function submitHandleFormEdit(dataInput) {
     .updateProfile(dataInput)
     .then((res) => {
       userInfo.setUserInfo(res.name, res.about, res.avatar);
+      popupFormEdit.close();
     })
     .catch((err) => {
       console.log(`ALLARM ${err}`);
@@ -170,8 +170,8 @@ function submitHandleFormAvatar(data) {
   api
     .updateAvatar(data.avatar)
     .then((res) => {
-      // userInfo.setUserAvatar(res);
       userInfo.setUserInfo(res.name, res.about, res.avatar);
+      popupEditAvatar.close();
     })
 
     .catch((err) => {
