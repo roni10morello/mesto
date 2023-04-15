@@ -9,6 +9,7 @@ export default class PopupDeleteCard extends Popup {
       ".elements__btn-delete"
     );
     this._buttonSave = this._popup.querySelector(".form__button-save");
+    this._buttonSaveTextDefault = this._buttonSave.textContent;
    }
 
    setSubmitAction(action) {
@@ -19,7 +20,7 @@ export default class PopupDeleteCard extends Popup {
     if (isLoading) {
       this._buttonSave.textContent = "Удаление...";
     } else {
-      this._buttonSave.textContent = "Да";
+      this._buttonSave.textContent = this._buttonSaveTextDefault;
     }
   }
 
